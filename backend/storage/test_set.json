@@ -1,0 +1,14 @@
+[
+  {
+    "question": "Who is Bala Pramithran?",
+    "ground_truth": "Bala Pramithran is a software engineer with a strong background in computer science, serving as the Lead of the college's largest technical community, Coders Forum."
+  },
+  {
+    "question": "What is Bala Pramithran's career objective?",
+    "ground_truth": "Pre-final year B.E. Computer Science student with strong fundamentals in core engineering concepts, who delivered a production-grade project solution for Ashok Leyland and serves as Lead of the college's largest technical community, Coders Forum."
+  },
+  {
+    "question": "What experience does Bala Pramithran have?",
+    "ground_truth": "Bala Pramithran has experience as a Project Intern at Infosys Limited from Nov 2024 - Feb 2025, where he built a full-stack web application using Angular + TypeScript for the frontend and Flask for the backend, and integrated Cloudinary for cloud-based media storage. He is currently the Lead of Coders Forum, organizing weekly meetups and monthly coding contests."
+  }
+]

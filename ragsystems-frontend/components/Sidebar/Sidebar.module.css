@@ -1,0 +1,195 @@
+/* ═══════════════════════════════════════════════════════════
+   Sidebar — Document library + upload
+   ═══════════════════════════════════════════════════════════ */
+
+.sidebar {
+  width: var(--sidebar-w);
+  background: var(--white);
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ─── Header ─── */
+.header {
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--line);
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.count {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--ink3);
+}
+
+/* ─── Upload Zone ─── */
+.uploadZone {
+  margin: 12px;
+  padding: 18px 12px;
+  border: 1.5px dashed var(--line);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-out);
+  background: var(--bg);
+}
+
+.uploadZone:hover {
+  border-color: var(--accent-mid);
+  background: var(--accent-soft);
+}
+
+.uploadZone.dragOver {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 3px rgba(91, 79, 255, 0.08);
+}
+
+.uploadIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 14px;
+  transition: transform 0.25s var(--ease-spring);
+}
+
+.uploadZone:hover .uploadIcon {
+  transform: scale(1.1);
+}
+
+.uploadLabel {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--ink2);
+}
+
+.uploadHint {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--ink3);
+}
+
+.uploadInput {
+  display: none;
+}
+
+/* ─── Upload Progress ─── */
+.uploadProgress {
+  margin: 0 12px 8px;
+  padding: 8px 10px;
+  background: var(--accent-soft);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: fadeIn 0.3s ease;
+}
+
+.uploadSpinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--accent-mid);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.uploadProgressText {
+  font-size: 10.5px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ─── Document List ─── */
+.docList {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 12px 12px;
+}
+
+.docItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s ease;
+  cursor: default;
+  animation: fadeIn 0.3s ease both;
+}
+
+.docItem:hover {
+  background: var(--bg);
+}
+
+.docIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.docInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.docName {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.docMeta {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--ink3);
+  margin-top: 1px;
+}
+
+/* ─── Empty State ─── */
+.emptyState {
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.emptyIcon {
+  font-size: 28px;
+  margin-bottom: 8px;
+  opacity: 0.4;
+}
+
+.emptyText {
+  font-size: 11.5px;
+  color: var(--ink3);
+  line-height: 1.5;
+}

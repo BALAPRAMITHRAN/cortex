@@ -1,0 +1,139 @@
+/* ═══════════════════════════════════════════════════════════
+   RAGAS Bottom Bar — Evaluation scores
+   ═══════════════════════════════════════════════════════════ */
+
+.bar {
+  height: var(--bottom-h);
+  background: var(--white);
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink3);
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ─── Metrics grid ─── */
+.metrics {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+}
+
+.metricCard {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 12px 14px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all 0.3s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.metricCard:hover {
+  border-color: var(--accent-mid);
+  box-shadow: var(--shadow-sm);
+}
+
+.metricName {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink3);
+  font-weight: 500;
+}
+
+.metricScore {
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.metricScore.green  { color: var(--green); }
+.metricScore.amber  { color: var(--amber); }
+.metricScore.red    { color: var(--red); }
+.metricScore.empty  { color: var(--ink3); font-size: 18px; }
+
+/* Underline bar */
+.underline {
+  height: 2px;
+  border-radius: 1px;
+  margin-top: 4px;
+  transition: width 0.8s var(--ease-out);
+  animation: barGrow 0.8s var(--ease-out) both;
+}
+
+.underline.green  { background: var(--green); }
+.underline.amber  { background: var(--amber); }
+.underline.red    { background: var(--red); }
+.underline.empty  { background: var(--line); width: 100% !important; }
+
+/* ─── Evaluate Button ─── */
+.evalBtn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  background: var(--ink);
+  color: var(--white);
+  white-space: nowrap;
+  transition: all 0.2s var(--ease-out);
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+.evalBtn:hover {
+  background: #2a2a4e;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.evalBtn:disabled {
+  background: var(--line);
+  color: var(--ink3);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.evalBtnLoading {
+  position: relative;
+  color: transparent;
+}
+
+.evalBtnLoading::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}

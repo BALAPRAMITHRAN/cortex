@@ -1,0 +1,118 @@
+/* ═══════════════════════════════════════════════════════════
+   Page — 4-panel grid layout
+   ═══════════════════════════════════════════════════════════ */
+
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr var(--pipeline-w);
+  grid-template-rows: var(--topbar-h) 1fr var(--bottom-h);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* ─── Topbar ─── */
+.topbar {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  height: var(--topbar-h);
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 24px;
+  z-index: 10;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 19px;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+
+.brandDot {
+  color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  gap: 2px;
+  flex: 1;
+}
+
+.navTab {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink3);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.navTab:hover {
+  color: var(--ink2);
+  background: var(--bg);
+}
+
+.navTab.activeTab {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.statusBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--green);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: var(--green-soft);
+  flex-shrink: 0;
+}
+
+.onlineDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: onlinePulse 2s ease-in-out infinite;
+}
+
+/* ─── Sidebar slot ─── */
+.sidebarSlot {
+  grid-column: 1;
+  grid-row: 2;
+  overflow: hidden;
+}
+
+/* ─── Center slot ─── */
+.centerSlot {
+  grid-column: 2;
+  grid-row: 2;
+  overflow: hidden;
+  display: flex;
+}
+
+/* ─── Pipeline slot ─── */
+.pipelineSlot {
+  grid-column: 3;
+  grid-row: 2;
+  overflow: hidden;
+}
+
+/* ─── Bottom bar slot ─── */
+.bottomSlot {
+  grid-column: 1 / -1;
+  grid-row: 3;
+}

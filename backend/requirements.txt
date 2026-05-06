@@ -1,0 +1,31 @@
+# API
+fastapi
+uvicorn[standard]
+
+# PDF loading
+pypdf
+langchain-community
+
+# Chunking + embeddings
+langchain-experimental
+sentence-transformers
+faiss-cpu
+
+# Retrieval
+rank-bm25
+langchain
+
+# Reranking + compression
+flashrank
+langchain-huggingface
+
+# Ollama client
+ollama
+
+# Evaluation
+ragas
+datasets
+
+# Utilities
+python-multipart
+pydantic
